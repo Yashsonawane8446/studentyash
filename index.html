@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> STUDENT CARD</title>
+</head>
+<style>
+    
+    .student-card{
+        border:1px dotted black;
+        margin:20px 40px;
+        padding: 10px;
+        font-size: 24px;
+        box-shadow: 5px 5px 5px #888888;
+        border-radius: 10px;
+        background-color: lightcoral;
+    }
+    .text-red{
+        color: rgb(7, 5, 5);
+    }
+   
+</style>
+<body>
+   <h1> STUDENT CARD </h1>
+   <div id="student-container"></div>
+   <script>
+    const Students=[
+        "YASH",
+        "DHANRAJ",
+        "OM",
+        "PRATHAM",
+        "PRASAD",
+        "PRANAV",
+        "ADITYA",
+        "SAGAR",
+        "Suraj",
+    ];
+const studentContainer=document.getElementById("student-container");
+for(let i=0; i<Students.length;i++){
+    const studentName=Students[i];
+    studentContainer.innerHTML+= `<div class='student-card ${studentName[0] !="S"
+    ?"text-red":""}'>
+        ${studentName.toUpperCase()}
+         </div>`;
+}
+   </script>
+</body>
+</html>
