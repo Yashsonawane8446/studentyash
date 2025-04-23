@@ -1,49 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> STUDENT CARD</title>
+    <title>product preview card</title>
 </head>
+
 <style>
-    
-    .student-card{
-        border:1px dotted black;
-        margin:20px 40px;
-        padding: 10px;
-        font-size: 24px;
-        box-shadow: 5px 5px 5px #888888;
-        border-radius: 10px;
-        background-color: lightcoral;
-    }
-    .text-red{
-        color: rgb(7, 5, 5);
-    }
-   
-</style>
-<body>
-   <h1> STUDENT CARD </h1>
-   <div id="student-container"></div>
-   <script>
-    const Students=[
-        "YASH",
-        "DHANRAJ",
-        "OM",
-        "PRATHAM",
-        "PRASAD",
-        "PRANAV",
-        "ADITYA",
-        "SAGAR",
-        "Suraj",
-    ];
-const studentContainer=document.getElementById("student-container");
-for(let i=0; i<Students.length;i++){
-    const studentName=Students[i];
-    studentContainer.innerHTML+= `<div class='student-card ${studentName[0] !="S"
-    ?"text-red":""}'>
-        ${studentName.toUpperCase()}
-         </div>`;
+
+    .product-images-container{
+    width: 600px;
+    height: 120px;
+    object-fit: cover;
+    border:3px solid black;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
 }
-   </script>
+    .product-image {
+        height: 80px;
+        width: 80px;
+        object-fit: cover;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: 10px;
+        cursor: pointer;
+    }
+    .product-images-container{
+        display: flex;
+        justify-content: center;
+    }
+    #main-product-image{
+        display: block;
+        margin: 20px auto;
+        border-radius: 20px;
+        box-shadow: 0 0 10px 2px black;
+        height: 400PX;
+
+
+    }
+     
+</style>
+
+<body>
+
+    <img src="Tata_Safari_vs_Mahindra_Scorpio_N_4_c2dcf6f790 4.webp" id="main-product-image" />
+
+
+    <div class="product-images-container">
+        <img src="Tata_Safari_vs_Mahindra_Scorpio_N_4_c2dcf6f790 4.webp" class="product-image" onclick="changeImage(1)" />
+        <img src="range.jpg" class="product-image " onclick="changeImage(2)" />
+        <img src="kanakpura-bengaluru-karnataka-india-18-260nw-2563698191.webp" class="product-image" onclick="changeImage(3)" />
+        <img src="grille-97 3.avif" class="product-image" onclick="changeImage(4)" />
+        <img src="new-mahindra-scorpio.webp" class="product-image" onclick="changeImage(5)" />
+    </div>
+    <script>
+        
+        function changeImage(num) {
+    if (typeof num !== 'number' || num < 1 || num > 5) {
+        console.error("Invalid image number");
+        return;
+    }
+    const mainImage = document.getElementById('main-product-image');
+    const imageSources = [
+        "Tata_Safari_vs_Mahindra_Scorpio_N_4_c2dcf6f790 4.webp",
+        "range.jpg",
+        "kanakpura-bengaluru-karnataka-india-18-260nw-2563698191.webp",
+        "grille-97 3.avif",
+        "new-mahindra-scorpio.webp"
+    ];
+    mainImage.src = imageSources[num - 1];
+}
+    </script>
+
 </body>
+
 </html>
